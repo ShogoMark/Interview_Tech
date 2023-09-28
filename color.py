@@ -1,8 +1,12 @@
+#!/usr/bin/python3
+
+
 from bs4 import BeautifulSoup
 import webcolors
 from collections import Counter
 from statistics import median
 import numpy as np
+import psycopg2
 
 
 def color_name_to_rgb_webcolors(color_name):
@@ -91,3 +95,7 @@ probability_red = red_count / total_colors
 
 print("Variance of Red Component:", variance_red)
 print("Probability of the color being red:", probability_red)
+
+
+# connect to PostgreSQL database
+conn = psycopg2.connect(database="postgres", user="admin", password="admin_pass"
